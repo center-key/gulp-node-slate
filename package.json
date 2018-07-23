@@ -14,7 +14,7 @@
       "node-slate",
       "nodejs",
       "gulp",
-      "gulpplugin",
+      "gulp-plugin",
       "slate",
       "static-site-generator"
    ],
