@@ -1,0 +1,9 @@
+# Downloaded and generated files
+/node_modules/
+/package-lock.json
+/source/
+/build/
+/api-docs/
+
+# Extraneous system files
+.DS_Store
