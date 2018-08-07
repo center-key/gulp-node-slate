@@ -10,7 +10,7 @@ package=https://raw.githubusercontent.com/center-key/gulp-node-slate/master/pack
 projectHome=$(cd $(dirname $0); pwd)
 webPage=api-docs/output/index.html
 
-info() {
+setupTools() {
    # Check for Node.js installation and download project dependencies
    cd $projectHome
    pwd
@@ -21,6 +21,13 @@ info() {
    npm install
    npm update
    npm outdated
+   echo
+   }
+
+runSpecs() {
+   cd $projectHome
+   echo "Specifications:"
+   npm test
    echo
    }
 
@@ -47,6 +54,7 @@ showVersions() {
    }
 
 openBrowser() {
+   cd $projectHome
    echo "To more quickly just run tests:"
    echo "   cd $projectHome"
    echo "   npm test"
@@ -59,7 +67,7 @@ openBrowser() {
 echo
 echo "Specification Runner"
 echo "===================="
-info
-npm test
+setupTools
+runSpecs
 showVersions
 openBrowser
