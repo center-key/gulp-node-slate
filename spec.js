@@ -17,9 +17,9 @@ const gulpNodeSlate =  require('./index.js');
 describe('The gulp-node-slate plugin', () => {
 
    it('is exported as a function', () => {
-      const actual =   typeof gulpNodeSlate;
-      const expected = 'function';
-      assert.equal(actual, expected);
+      const actual =   { type: typeof gulpNodeSlate };
+      const expected = { type: 'function' };
+      assert.deepEqual(actual, expected);
       });
 
    it('throws an error when given a bogus configuration', () => {
@@ -39,7 +39,9 @@ describe('Running the gulp-node-slate plugin', () => {
       function handleFileFromStream(file) {
          assert(file.isStream());
          function handleDataFromFile(err, data) {
-            assert.equal(data.toString(), 'node-slate as a gulp task!');
+            const actual =   { data: data.toString() };
+            const expected = { data: 'node-slate as a gulp task!' };
+            assert.deepEqual(actual, expected);
             done();
             }
          file.contents.pipe(es.wait(handleDataFromFile));
@@ -52,7 +54,9 @@ describe('Running the gulp-node-slate plugin', () => {
 
    it('creates the API documentation web page', () => {
       const webPage = options.build + '/index.html';
-      assert(fs.existsSync(webPage));
+      const actual =   { page: webPage, exists: fs.existsSync(webPage) };
+      const expected = { page: webPage, exists: true };
+      assert.deepEqual(actual, expected);
       });
 
    });
