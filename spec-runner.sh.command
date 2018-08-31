@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ###################
 # gulp-node-slate #
 ###################
@@ -6,13 +6,16 @@
 # To make this file runnable:
 #   $ chmod +x *.sh.command
 
-package=https://raw.githubusercontent.com/center-key/gulp-node-slate/master/package.json
+banner="gulp-node-slate"
 projectHome=$(cd $(dirname $0); pwd)
+package=https://raw.githubusercontent.com/center-key/gulp-node-slate/master/package.json
 webPage=api-docs/output/index.html
 
 setupTools() {
-   # Check for Node.js installation and download project dependencies
    cd $projectHome
+   echo
+   echo $banner
+   echo $(echo $banner | sed -e "s/./=/g")
    pwd
    echo
    echo "Node.js:"
@@ -64,9 +67,6 @@ openBrowser() {
    open $webPage
    }
 
-echo
-echo "Specification Runner"
-echo "===================="
 setupTools
 runSpecs
 showVersions
