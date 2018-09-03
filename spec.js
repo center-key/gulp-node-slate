@@ -6,7 +6,8 @@
 //  $ cd gulp-node-slate
 //  $ npm test
 
-const assert =         require('assert');
+// Imports
+const assert =         require('assert').strict;
 const es =             require('event-stream');
 const fs =             require('fs');
 const stringToStream = require('string-to-stream');
