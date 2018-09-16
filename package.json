@@ -40,7 +40,7 @@
       "through2": "~2.0"
    },
    "devDependencies": {
-      "event-stream": "~3.3",
+      "event-stream": "~4.0",
       "gulp": "~4.0",
       "jshint": "~2.9",
       "mocha": "~5.2",
