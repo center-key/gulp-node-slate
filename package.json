@@ -5,9 +5,10 @@
    "license": "MIT",
    "main": "index.js",
    "repository": "github:center-key/gulp-node-slate",
-   "bugs": "https://github.com/center-key/gulp-node-slate/issues",
    "homepage": "https://github.com/center-key/gulp-node-slate",
-   "docs": "https://github.com/center-key/gulp-node-slate/blob/master/README.md",
+   "bugs": "https://github.com/center-key/gulp-node-slate/issues",
+   "docs": "https://github.com/center-key/gulp-node-slate#readme",
+   "author": "Center Key (https://centerkey.com)",
    "keywords": [
       "api-documentation",
       "javascript",
@@ -18,10 +19,6 @@
       "slate",
       "static-site-generator"
    ],
-   "author": {
-      "name": "Center Key",
-      "url": "https://centerkey.com"
-   },
    "scripts": {
       "pretest": "jshint *.js",
       "test": "mocha spec.js"

@@ -9,11 +9,11 @@
 
 [![npm](https://img.shields.io/npm/v/gulp-node-slate.svg)](https://www.npmjs.com/package/gulp-node-slate)
 &nbsp;
-[![dependencies Status](https://david-dm.org/center-key/gulp-node-slate/status.svg)](https://david-dm.org/center-key/gulp-node-slate)
+[![Dependencies](https://david-dm.org/center-key/gulp-node-slate/status.svg)](https://david-dm.org/center-key/gulp-node-slate)
 &nbsp;
-[![Known Vulnerabilities](https://snyk.io/test/github/center-key/gulp-node-slate/badge.svg)](https://snyk.io/test/github/center-key/gulp-node-slate)
+[![Vulnerabilities](https://snyk.io/test/github/center-key/gulp-node-slate/badge.svg)](https://snyk.io/test/github/center-key/gulp-node-slate)
 &nbsp;
-[![Build Status](https://travis-ci.org/center-key/gulp-node-slate.svg)](https://travis-ci.org/center-key/gulp-node-slate)
+[![Build](https://travis-ci.org/center-key/gulp-node-slate.svg)](https://travis-ci.org/center-key/gulp-node-slate)
 
 ## A) Lightning quick demo
 
@@ -48,7 +48,11 @@ $ npm install gulp-node-slate --save-dev
 #### 2. Add a task to your **gulpfile.js**:
 ```javascript
 const slate = require('gulp-node-slate');
-function generateApiDocs() { return gulp.src([]).pipe(slate()); }
+
+function generateApiDocs() {
+   return gulp.src([]).pipe(slate());
+   }
+
 gulp.task('slate', generateApiDocs);
 ```
 
