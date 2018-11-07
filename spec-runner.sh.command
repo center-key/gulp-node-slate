@@ -8,7 +8,6 @@
 
 banner="gulp-node-slate"
 projectHome=$(cd $(dirname $0); pwd)
-package=https://raw.githubusercontent.com/center-key/gulp-node-slate/master/package.json
 webPage=api-docs/output/index.html
 
 setupTools() {
