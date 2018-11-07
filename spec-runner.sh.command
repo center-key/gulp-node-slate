@@ -4,7 +4,7 @@
 ###################
 
 # To make this file runnable:
-#   $ chmod +x *.sh.command
+#     $ chmod +x *.sh.command
 
 banner="gulp-node-slate"
 projectHome=$(cd $(dirname $0); pwd)
