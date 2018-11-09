@@ -2,10 +2,6 @@
 // gulp-node-slate //
 /////////////////////
 
-// Run:
-//  $ cd gulp-node-slate
-//  $ npm test
-
 // Imports
 const assert =         require('assert').strict;
 const es =             require('event-stream');

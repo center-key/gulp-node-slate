@@ -2,20 +2,22 @@
 // gulp-node-slate //
 /////////////////////
 
+// Imports
 const fs =          require('fs-extra');
 const through =     require('through2');
 const exec =        require('child_process').execFileSync;
 const PluginError = require('plugin-error');
 
+// Setup
 const pluginName = 'gulp-node-slate';
-module.exports = gulpNodeSlate;
 
+// Gulp plugin
 function gulpNodeSlate(options) {
+
    const defaults = { source: 'source', build: 'build' };
    if (options !== undefined && typeof options !== 'object')
       throw new PluginError(pluginName, 'Options parameter must be an object');
    console.log('settings:', Object.assign(defaults, options));
-
    const folder = {
       nodeSlate:        'node_modules/node-slate',
       nodeSlateSrcOrig: 'node_modules/node-slate/source-original',
@@ -80,3 +82,6 @@ function gulpNodeSlate(options) {
 
    return through.obj(transform, completion);  //return stream
    }
+
+// Module loading
+module.exports = gulpNodeSlate;

@@ -22,8 +22,7 @@ Don't have an existing gulp project?  Just want to experiment with no commitment
 $ mkdir my-api-docs
 $ cd my-api-docs
 $ npm init --yes
-$ npm install gulp@4 --save-dev
-$ npm install gulp-node-slate --save-dev
+$ npm install --save-dev gulp@4 gulp-node-slate
 $ cat > gulpfile.js << EOF
 const gulp =  require('gulp');
 const slate = require('gulp-node-slate');
@@ -40,7 +39,7 @@ Otherwise, follow the steps below.
 
 #### 1. Install into your project:
 ```shell
-$ npm install gulp-node-slate --save-dev
+$ npm install --save-dev gulp@4 gulp-node-slate
 ```
 
 #### 2. Add a task to your **gulpfile.js**:
