@@ -8,7 +8,7 @@ const es =             require('event-stream');
 const fs =             require('fs');
 const stringToStream = require('string-to-stream');
 const Vinyl =          require('vinyl');
-const gulpNodeSlate =  require('./index.js');
+const gulpNodeSlate =  require('./gulp-node-slate.js');
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 describe('The gulp-node-slate plugin', () => {

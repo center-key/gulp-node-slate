@@ -3,7 +3,7 @@
    "description": "node-slate as a gulp task",
    "version": "1.3.2",
    "license": "MIT",
-   "main": "index.js",
+   "main": "gulp-node-slate.js",
    "repository": "github:center-key/gulp-node-slate",
    "homepage": "https://github.com/center-key/gulp-node-slate",
    "bugs": "https://github.com/center-key/gulp-node-slate/issues",
