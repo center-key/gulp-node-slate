@@ -1,7 +1,7 @@
 {
    "name": "gulp-node-slate",
    "description": "node-slate as a gulp task",
-   "version": "1.3.2",
+   "version": "1.3.3",
    "license": "MIT",
    "main": "gulp-node-slate.js",
    "repository": "github:center-key/gulp-node-slate",
@@ -19,10 +19,6 @@
       "slate",
       "static-site-generator"
    ],
-   "scripts": {
-      "pretest": "jshint *.js",
-      "test": "mocha spec.js"
-   },
    "jshintConfig": {
       "esversion": 6,
       "strict": "implied",
@@ -30,6 +26,10 @@
       "unused": true,
       "node": true,
       "mocha": true
+   },
+   "scripts": {
+      "pretest": "jshint *.js",
+      "test": "mocha spec.js"
    },
    "dependencies": {
       "fs-extra": "~7.0",
