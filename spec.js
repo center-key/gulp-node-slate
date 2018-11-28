@@ -44,7 +44,15 @@ describe('Running the gulp-node-slate plugin', () => {
             assert.deepEqual(actual, expected);
             done();
             }
+         // this is a mock
          handleDataFromFile(null, 'node-slate as a gulp task!');  //TODO: Find replacement for es.wait
+         async function asyncFun (file) {
+           var value = await Promise
+             .resolve(1)
+             .then(handleDataFromFile);
+           return value;
+         }
+         asyncFun().then(x => console.log(`x: ${x}`));
          // file.contents.pipe(es.wait(handleDataFromFile));
          }
       const pluginStream = gulpNodeSlate(options);
