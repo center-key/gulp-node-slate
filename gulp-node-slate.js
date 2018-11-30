@@ -4,7 +4,7 @@
 
 // Imports
 const fs =          require('fs-extra');
-const through =     require('through2');
+const through2 =    require('through2');
 const exec =        require('child_process').execFileSync;
 const PluginError = require('plugin-error');
 
@@ -80,7 +80,7 @@ function gulpNodeSlate(options) {
       done();
       }
 
-   return through.obj(transform, completion);  //return stream
+   return through2.obj(transform, completion);  //return stream
    }
 
 // Module loading
