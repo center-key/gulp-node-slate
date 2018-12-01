@@ -44,8 +44,17 @@ describe('Running the gulp-node-slate plugin', () => {
             assert.deepEqual(actual, expected);
             done();
             }
-         handleDataFromFile(null, 'node-slate as a gulp task!');  //TODO: Find replacement for es.wait
+         // handleDataFromFile(null, 'node-slate as a gulp task!');  //TODO: Find replacement for es.wait
          // file.contents.pipe(es.wait(handleDataFromFile));
+         //
+         // https://nodejs.org/api/stream.html#stream_class_stream_readable
+         file.contents.on('data', (chunk) => {
+            handleDataFromFile(null, chunk);
+            console.log(`Received ${chunk.length} bytes of data.`);
+         });
+         file.contents.on('end', () => {
+            console.log('There will be no more data.');
+         });
          }
       const pluginStream = gulpNodeSlate(options);
       pluginStream.on('data', handleFileFromStream);
