@@ -26,7 +26,7 @@ $ npm install --save-dev gulp@4 gulp-node-slate
 $ cat > gulpfile.js << EOF
 const gulp =  require('gulp');
 const slate = require('gulp-node-slate');
-function generateApiDocs() { return gulp.src('.').pipe(slate()); }
+const generateApiDocs = () => gulp.src('.').pipe(slate());
 gulp.task('slate', generateApiDocs);
 EOF
 $ node node_modules/gulp/bin/gulp.js slate
@@ -46,9 +46,8 @@ $ npm install --save-dev gulp@4 gulp-node-slate
 ```javascript
 const slate = require('gulp-node-slate');
 
-function generateApiDocs() {
-   return gulp.src([]).pipe(slate());
-   }
+const generateApiDocs = () =>
+   gulp.src([]).pipe(slate());
 
 gulp.task('slate', generateApiDocs);
 ```
