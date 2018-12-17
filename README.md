@@ -20,8 +20,9 @@ Don't have an existing gulp project?  Just want to experiment with no commitment
 $ mkdir my-api-docs
 $ cd my-api-docs
 $ npm init --yes
-$ npm install --save-dev gulp@4 gulp-node-slate
-$ curl --remote-name https://raw.githubusercontent.com/center-key/gulp-node-slate/master/gulpfile.js
+$ npm install --save-dev gulp gulp-node-slate
+$ f=https://raw.githubusercontent.com/center-key/gulp-node-slate/master/gulpfile.js
+$ curl --remote-name $f
 $ cat gulpfile.js
 $ node node_modules/gulp/bin/gulp.js slate
 $ open build/index.html
@@ -31,7 +32,7 @@ Otherwise, follow the steps below.
 ## B) Instructions
 #### 1. Install into your project:
 ```shell
-$ npm install --save-dev gulp@4 gulp-node-slate
+$ npm install --save-dev gulp gulp-node-slate
 ```
 #### 2. Add a task to your **gulpfile.js**:
 ```javascript
