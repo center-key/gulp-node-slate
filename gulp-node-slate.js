@@ -3,7 +3,9 @@
 /////////////////////
 
 // Imports
+const colors =      require('ansi-colors');
 const fs =          require('fs-extra');
+const path =        require('path');
 const through2 =    require('through2');
 const exec =        require('child_process').execFileSync;
 const PluginError = require('plugin-error');
@@ -15,16 +17,17 @@ const pluginName = 'gulp-node-slate';
 const gulpNodeSlate = (options) => {
 
    const defaults = { source: 'source', build: 'build' };
+   const settings = Object.assign(defaults, options);
    if (options !== undefined && typeof options !== 'object')
       throw new PluginError(pluginName, 'Options parameter must be an object');
-   console.log('settings:', Object.assign(defaults, options));
+   console.log('settings:', settings);
    const folder = {
       nodeSlate:        'node_modules/node-slate',
       nodeSlateSrcOrig: 'node_modules/node-slate/source-original',
       nodeSlateSrc:     'node_modules/node-slate/source',
       nodeSlateBuild:   'node_modules/node-slate/build',
-      source:           defaults.source,
-      build:            defaults.build
+      source:           settings.source,
+      build:            settings.build
       };
 
    const logExec = (cmd, folder) => {
@@ -78,6 +81,8 @@ const gulpNodeSlate = (options) => {
       rebuildNodeSlateSourceFolder();
       generateApiDocs();
       done();
+      console.log('Source input folder (markdown):\n   ', colors.green(path.resolve(folder.source)));
+      console.log('Build output folder (HTML):\n   ',     colors.green(path.resolve(folder.build)));
       };
 
    return through2.obj(transform, completion);  //return stream

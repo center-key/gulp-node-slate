@@ -32,6 +32,7 @@
       "test": "mocha spec.js"
    },
    "dependencies": {
+      "ansi-colors": "~3.2",
       "fs-extra": "~7.0",
       "node-slate": "~1.8",
       "through2": "~3.0"
@@ -40,6 +41,7 @@
       "gulp": "~4.0",
       "jshint": "~2.9",
       "mocha": "~5.2",
+      "path": "~0.12",
       "plugin-error": "~1.0",
       "string-to-stream": "~1.1"
    }
