@@ -20,7 +20,7 @@ const gulpNodeSlate = (options) => {
    const settings = Object.assign(defaults, options);
    if (options !== undefined && typeof options !== 'object')
       throw new PluginError(pluginName, 'Options parameter must be an object');
-   console.log('settings:', settings);
+   console.log('Settings:', settings);
    const folder = {
       nodeSlate:        'node_modules/node-slate',
       nodeSlateSrcOrig: 'node_modules/node-slate/source-original',
@@ -81,8 +81,8 @@ const gulpNodeSlate = (options) => {
       rebuildNodeSlateSourceFolder();
       generateApiDocs();
       done();
-      console.log('Source input folder (markdown):\n   ', colors.green(path.resolve(folder.source)));
-      console.log('Build output folder (HTML):\n   ',     colors.green(path.resolve(folder.build)));
+      console.log('Source input (markdown):', colors.green(path.resolve(folder.source)));
+      console.log('Build output (HTML):    ', colors.green(path.resolve(folder.build)));
       };
 
    return through2.obj(transform, completion);  //return stream
