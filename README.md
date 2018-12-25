@@ -36,6 +36,7 @@ f=https://raw.githubusercontent.com/center-key/gulp-node-slate/master/gulpfile.j
 curl --remote-name $f
 cat gulpfile.js
 node node_modules/gulp/bin/gulp.js slate
+open build/index.html
 -->
 Otherwise, follow the steps below.
 
