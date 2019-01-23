@@ -38,19 +38,20 @@ describe('Running the gulp-node-slate plugin', () => {
       const mockFile = new Vinyl({ contents: stringToStream('node-slate as a gulp task!') });
       const handleFileFromStream = (file) => {
          assert(file.isStream());
-         const handleDataFromFile = (data) => {
-            const actual =   { data: data.toString() };
+         const chunks = [];
+         const handleChunk = (chunk) => {
+            chunks.push(chunk);
+            };
+         const handleEnd = () => {
+            console.log('There will be no more data.');
+            const actual = { data: chunks.map( (chunk) =>  chunk.toString() ).join('') };
+            // chunks to string combine chunks
             const expected = { data: 'node-slate as a gulp task!' };
             assert.deepEqual(actual, expected);
             done();
-            };
-         file.contents.on('data', (chunk) => {
-            handleDataFromFile(chunk);
-            console.log(`Received ${chunk.length} bytes of data.`);
-            });
-         file.contents.on('end', () => {
-            console.log('There will be no more data.');
-            });
+         };
+         file.contents.on('data', handleChunk);
+         file.contents.on('end', handleEnd);
          };
       const pluginStream = gulpNodeSlate(options);
       pluginStream.on('data', handleFileFromStream);
