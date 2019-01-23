@@ -14,52 +14,54 @@
 [![Build](https://travis-ci.org/center-key/gulp-node-slate.svg)](https://travis-ci.org/center-key/gulp-node-slate)
 
 ## A) Lightning quick demo
-
 Don't have an existing gulp project?  Just want to experiment with no commitment?
-
-#### Blindly enter these commands:
+#### Blindly enter these 9 commands in your terminal:
 ```shell
 $ mkdir my-api-docs
 $ cd my-api-docs
 $ npm init --yes
-$ npm install --save-dev gulp@4 gulp-node-slate
-$ cat > gulpfile.js << EOF
-const gulp =  require('gulp');
-const slate = require('gulp-node-slate');
-function generateApiDocs() { return gulp.src('.').pipe(slate()); }
-gulp.task('slate', generateApiDocs);
-EOF
+$ npm install --save-dev gulp gulp-node-slate
+$ f=https://raw.githubusercontent.com/center-key/gulp-node-slate/master/gulpfile.js
+$ curl --remote-name $f
+$ cat gulpfile.js
 $ node node_modules/gulp/bin/gulp.js slate
 $ open build/index.html
 ```
-
+<!--
+mkdir my-api-docs
+cd my-api-docs
+npm init --yes
+npm install --save-dev gulp gulp-node-slate
+f=https://raw.githubusercontent.com/center-key/gulp-node-slate/master/gulpfile.js
+curl --remote-name $f
+cat gulpfile.js
+node node_modules/gulp/bin/gulp.js slate
+open build/index.html
+-->
 Otherwise, follow the steps below.
 
 ## B) Instructions
-
 #### 1. Install into your project:
 ```shell
-$ npm install --save-dev gulp@4 gulp-node-slate
+$ npm install --save-dev gulp gulp-node-slate
 ```
-
 #### 2. Add a task to your **gulpfile.js**:
 ```javascript
+// Imports
 const slate = require('gulp-node-slate');
 
-function generateApiDocs() {
-   return gulp.src([]).pipe(slate());
-   }
+// Tasks
+const generateApiDocs = () => gulp.src([]).pipe(slate());
 
+// Gulp
 gulp.task('slate', generateApiDocs);
 ```
-
 #### 3. Build and view the API documentation:
 ```shell
 $ gulp slate
 $ ls source
 $ open build/index.html
 ```
-
 The structure of the generated `source` folder is:
 ```
 source/
@@ -70,7 +72,6 @@ source/
    custom.scss
    index.yml
 ```
-
 #### 4. Get to work
 Customize the files in the `source` folder to create your API documentation
 and then rerun `gulp slate`.
