@@ -43,21 +43,19 @@ describe('Running the gulp-node-slate plugin', () => {
             chunks.push(chunk);
             };
          const handleEnd = () => {
-            console.log('There will be no more data.');
-            const actual = { data: chunks.map( (chunk) =>  chunk.toString() ).join('') };
-            // chunks to string combine chunks
+            const actual =   { data: chunks.map(chunk => chunk.toString()).join('') };
             const expected = { data: 'node-slate as a gulp task!' };
             assert.deepEqual(actual, expected);
             done();
-         };
+            };
          file.contents.on('data', handleChunk);
-         file.contents.on('end', handleEnd);
+         file.contents.on('end',  handleEnd);
          };
       const pluginStream = gulpNodeSlate(options);
       pluginStream.on('data', handleFileFromStream);
       pluginStream.write(mockFile);
       pluginStream.end();
-      }).timeout(oneMinute);  //in case node-slate needs to be downloaded
+      }).timeout(oneMinute);  //extra time in case node-slate needs to be downloaded
 
    it('creates the API documentation web page', () => {
       const webPage = options.build + '/index.html';
