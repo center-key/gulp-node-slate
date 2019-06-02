@@ -39,16 +39,13 @@ describe('Running the gulp-node-slate plugin', () => {
       const handleFileFromStream = (file) => {
          assert(file.isStream());
          const chunks = [];
-         const handleChunk = (chunk) => {
-            chunks.push(chunk);
-            };
          const handleEnd = () => {
             const actual =   { data: chunks.map(chunk => chunk.toString()).join('') };
             const expected = { data: 'node-slate as a gulp task!' };
             assert.deepEqual(actual, expected);
             done();
             };
-         file.contents.on('data', handleChunk);
+         file.contents.on('data', chunk => chunks.push(chunk));
          file.contents.on('end',  handleEnd);
          };
       const pluginStream = gulpNodeSlate(options);
