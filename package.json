@@ -33,17 +33,17 @@
       "test": "mocha spec.js"
    },
    "dependencies": {
-      "ansi-colors": "~3.2",
-      "fs-extra": "~8.0",
+      "ansi-colors": "~4.1",
+      "fs-extra": "~8.1",
       "node-slate": "~1.9",
       "through2": "~3.0"
    },
    "devDependencies": {
       "gulp": "~4.0",
       "jshint": "~2.10",
-      "mocha": "~6.1",
+      "mocha": "~6.2",
       "path": "~0.12",
       "plugin-error": "~1.0",
-      "string-to-stream": "~1.1"
+      "string-to-stream": "~3.0"
    }
 }
