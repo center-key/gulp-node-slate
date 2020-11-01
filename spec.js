@@ -3,7 +3,7 @@
 /////////////////////
 
 // Imports
-const assert =         require('assert').strict;
+const assert =         require('assert');
 const fs =             require('fs-extra');
 const stringToStream = require('string-to-stream');
 const Vinyl =          require('vinyl');
@@ -17,7 +17,7 @@ describe('The gulp-node-slate plugin', () => {
    it('is exported as a function', () => {
       const actual =   { type: typeof gulpNodeSlate };
       const expected = { type: 'function' };
-      assert.deepEqual(actual, expected);
+      assert.deepStrictEqual(actual, expected);
       });
 
    it('throws an error when given a bogus configuration', () => {
@@ -42,7 +42,7 @@ describe('Running the gulp-node-slate plugin', () => {
          const handleEnd = () => {
             const actual =   { data: chunks.map(chunk => chunk.toString()).join('') };
             const expected = { data: 'node-slate as a gulp task!' };
-            assert.deepEqual(actual, expected);
+            assert.deepStrictEqual(actual, expected);
             done();
             };
          file.contents.on('data', chunk => chunks.push(chunk));
@@ -58,7 +58,7 @@ describe('Running the gulp-node-slate plugin', () => {
       const webPage = options.build + '/index.html';
       const actual =   { page: webPage, exists: fs.existsSync(webPage) };
       const expected = { page: webPage, exists: true };
-      assert.deepEqual(actual, expected);
+      assert.deepStrictEqual(actual, expected);
       });
 
    });
