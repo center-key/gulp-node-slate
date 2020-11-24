@@ -9,7 +9,6 @@
 
 [![License:MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/center-key/gulp-node-slate/blob/master/LICENSE.txt)
 [![npm](https://img.shields.io/npm/v/gulp-node-slate.svg)](https://www.npmjs.com/package/gulp-node-slate)
-[![Dependencies](https://david-dm.org/center-key/gulp-node-slate/status.svg)](https://david-dm.org/center-key/gulp-node-slate)
 [![Vulnerabilities](https://snyk.io/test/github/center-key/gulp-node-slate/badge.svg)](https://snyk.io/test/github/center-key/gulp-node-slate)
 [![Build](https://travis-ci.org/center-key/gulp-node-slate.svg)](https://travis-ci.org/center-key/gulp-node-slate)
 
