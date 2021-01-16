@@ -10,7 +10,7 @@
 [![License:MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/center-key/gulp-node-slate/blob/master/LICENSE.txt)
 [![npm](https://img.shields.io/npm/v/gulp-node-slate.svg)](https://www.npmjs.com/package/gulp-node-slate)
 [![Vulnerabilities](https://snyk.io/test/github/center-key/gulp-node-slate/badge.svg)](https://snyk.io/test/github/center-key/gulp-node-slate)
-[![Build](https://travis-ci.com/center-key/gulp-node-slate.svg)](https://travis-ci.com/center-key/gulp-node-slate)
+[![Build](https://travis-ci.org/center-key/gulp-node-slate.svg)](https://travis-ci.org/center-key/gulp-node-slate)
 
 ## A) Lightning quick demo
 Don't have an existing gulp project?  Just want to experiment with no commitment?
