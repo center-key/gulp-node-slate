@@ -3,12 +3,12 @@
 /////////////////////
 
 // Imports
-const colors =      require('ansi-colors');
-const fs =          require('fs-extra');
-const path =        require('path');
-const through2 =    require('through2');
-const exec =        require('child_process').execFileSync;
-const PluginError = require('plugin-error');
+import colors from      'ansi-colors';
+import fs from          'fs-extra';
+import path from        'path';
+import through2 from    'through2';
+import PluginError from 'plugin-error';
+import { execFileSync } from 'child_process';
 
 // Setup
 const pluginName = 'gulp-node-slate';
@@ -36,7 +36,7 @@ const gulpNodeSlate = (options) => {
       if (folder)
          options.cwd = folder;
       console.log(cmd + (folder ? ' ./' + folder : ''));
-      exec(cmd.split(' ')[0], args, options);
+      execFileSync(cmd.split(' ')[0], args, options);
       };
 
    const setupNodeSlate = () => {
@@ -89,4 +89,4 @@ const gulpNodeSlate = (options) => {
    };
 
 // Module loading
-module.exports = gulpNodeSlate;
+export { gulpNodeSlate };

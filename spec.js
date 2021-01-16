@@ -3,13 +3,13 @@
 /////////////////////
 
 // Imports
-const assert =         require('assert');
-const fs =             require('fs-extra');
-const stringToStream = require('string-to-stream');
-const Vinyl =          require('vinyl');
+import assert from         'assert';
+import fs from             'fs-extra';
+import stringToStream from 'string-to-stream';
+import Vinyl from          'vinyl';
 
 // Plugin
-const gulpNodeSlate = require('./gulp-node-slate.js');
+import { gulpNodeSlate } from './gulp-node-slate.js';
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 describe('The gulp-node-slate plugin', () => {

@@ -7,8 +7,8 @@
 //    https://github.com/center-key/gulp-node-slate#readme
 
 // Imports
-const gulp =  require('gulp');
-const slate = require('gulp-node-slate');
+import gulp from  'gulp';
+import slate from 'gulp-node-slate';
 
 // Tasks
 const generateApiDocs = () => gulp.src('.').pipe(slate());
