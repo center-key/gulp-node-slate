@@ -47,7 +47,8 @@ $ npm install --save-dev gulp gulp-node-slate
 #### 2. Add a task to your **gulpfile.js**:
 ```javascript
 // Imports
-const slate = require('gulp-node-slate');
+import gulp from 'gulp';
+import slate from 'gulp-node-slate';
 
 // Tasks
 const generateApiDocs = () => gulp.src([]).pipe(slate());
