@@ -1,18 +1,18 @@
 <p align=center>
-   <img src=https://raw.githubusercontent.com/lord/img/master/logo-slate.png width=200 alt=logo><br>
+   <img src=https://raw.githubusercontent.com/lord/img/main/logo-slate.png width=200 alt=logo><br>
    Slate helps you create beautiful, intelligent, responsive API documentation.<br>
-   <img src=https://raw.githubusercontent.com/lord/img/master/screenshot-slate.png width=700 alt=screenshot>
+   <img src=https://raw.githubusercontent.com/lord/img/main/screenshot-slate.png width=700 alt=screenshot>
 </p>
 
 # gulp-node-slate
 *[node-slate](https://github.com/center-key/node-slate) as a gulp task*
 
-[![License:MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/center-key/gulp-node-slate/blob/master/LICENSE.txt)
+[![License:MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/center-key/gulp-node-slate/blob/main/LICENSE.txt)
 [![npm](https://img.shields.io/npm/v/gulp-node-slate.svg)](https://www.npmjs.com/package/gulp-node-slate)
 [![Vulnerabilities](https://snyk.io/test/github/center-key/gulp-node-slate/badge.svg)](https://snyk.io/test/github/center-key/gulp-node-slate)
-[![Build](https://travis-ci.org/center-key/gulp-node-slate.svg)](https://travis-ci.org/center-key/gulp-node-slate)
+[![Build](https://github.com/center-key/gulp-node-slate/workflows/build/badge.svg)](https://github.com/center-key/gulp-node-slate/actions?query=workflow%3Abuild)
 
-## A) Lightning quick demo
+## A) Lightning Quick Demo
 Don't have an existing gulp project?  Just want to experiment with no commitment?
 #### Blindly enter these 9 commands in your terminal:
 ```shell
@@ -20,7 +20,7 @@ $ mkdir my-api-docs
 $ cd my-api-docs
 $ npm init --yes
 $ npm install --save-dev gulp gulp-node-slate
-$ f=https://raw.githubusercontent.com/center-key/gulp-node-slate/master/gulpfile.js
+$ f=https://raw.githubusercontent.com/center-key/gulp-node-slate/main/gulpfile.js
 $ curl --remote-name $f
 $ cat gulpfile.js
 $ node node_modules/gulp/bin/gulp.js slate
@@ -31,7 +31,7 @@ mkdir my-api-docs
 cd my-api-docs
 npm init --yes
 npm install --save-dev gulp gulp-node-slate
-f=https://raw.githubusercontent.com/center-key/gulp-node-slate/master/gulpfile.js
+f=https://raw.githubusercontent.com/center-key/gulp-node-slate/main/gulpfile.js
 curl --remote-name $f
 cat gulpfile.js
 node node_modules/gulp/bin/gulp.js slate
