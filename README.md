@@ -1,7 +1,7 @@
 <p align=center>
-   <img src=https://raw.githubusercontent.com/lord/img/main/logo-slate.png width=200 alt=logo><br>
+   <img src=https://raw.githubusercontent.com/lord/img/master/logo-slate.png width=200 alt=logo><br>
    Slate helps you create beautiful, intelligent, responsive API documentation.<br>
-   <img src=https://raw.githubusercontent.com/lord/img/main/screenshot-slate.png width=700 alt=screenshot>
+   <img src=https://raw.githubusercontent.com/lord/img/master/screenshot-slate.png width=700 alt=screenshot>
 </p>
 
 # gulp-node-slate
