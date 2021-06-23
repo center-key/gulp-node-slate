@@ -3,10 +3,11 @@
 /////////////////////
 
 // Imports
-import assert from         'assert';
-import fs from             'fs-extra';
+import assert from 'assert';
+import { assertDeepStrictEqual } from 'assert-deep-strict-equal';
+import fs from 'fs-extra';
 import stringToStream from 'string-to-stream';
-import Vinyl from          'vinyl';
+import Vinyl from 'vinyl';
 
 // Plugin
 import { gulpNodeSlate } from './gulp-node-slate.js';
@@ -37,7 +38,7 @@ describe('Running the gulp-node-slate plugin', () => {
    it('passes through a file in the stream', (done) => {
       const mockFile = new Vinyl({ contents: stringToStream('node-slate as a gulp task!') });
       const handleFileFromStream = (file) => {
-         assert(file.isStream());
+         assertDeepStrictEqual({ stream: file.isStream() }, { stream: true });
          const chunks = [];
          const handleEnd = () => {
             const actual =   { data: chunks.map(chunk => chunk.toString()).join('') };
