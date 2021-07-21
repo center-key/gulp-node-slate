@@ -3,11 +3,11 @@
 /////////////////////
 
 // Imports
-import colors from      'ansi-colors';
-import fs from          'fs-extra';
-import path from        'path';
-import through2 from    'through2';
-import PluginError from 'plugin-error';
+import chalk from            'chalk';
+import fs from               'fs-extra';
+import path from             'path';
+import through2 from         'through2';
+import PluginError from      'plugin-error';
 import { execFileSync } from 'child_process';
 
 // Setup
@@ -81,8 +81,8 @@ const gulpNodeSlate = (options) => {
       rebuildNodeSlateSourceFolder();
       generateApiDocs();
       done();
-      console.log('Source input (markdown):', colors.green(path.resolve(folder.source)));
-      console.log('Build output (HTML):    ', colors.green(path.resolve(folder.build)));
+      console.log('Source input (markdown):', chalk.green(path.resolve(folder.source)));
+      console.log('Build output (HTML):    ', chalk.green(path.resolve(folder.build)));
       };
 
    return through2.obj(transform, completion);  //return stream
