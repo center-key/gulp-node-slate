@@ -31,7 +31,8 @@
    },
    "scripts": {
       "pretest": "jshint *.js",
-      "test": "mocha spec.js"
+      "test": "mocha spec.js",
+      "posttest": "w3c-html-validator"
    },
    "dependencies": {
       "chalk": "~4.1",
@@ -46,6 +47,7 @@
       "mocha": "~9.0",
       "path": "~0.12",
       "plugin-error": "~1.0",
-      "string-to-stream": "~3.0"
+      "string-to-stream": "~3.0",
+      "w3c-html-validator": "~0.7"
    }
 }
