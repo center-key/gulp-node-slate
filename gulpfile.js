@@ -7,7 +7,7 @@
 //    https://github.com/center-key/gulp-node-slate#readme
 
 // Imports
-import gulp from  'gulp';
+import gulp  from 'gulp';
 import slate from 'gulp-node-slate';
 
 // Tasks

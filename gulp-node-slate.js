@@ -3,11 +3,11 @@
 /////////////////////
 
 // Imports
-import chalk from            'chalk';
-import fs from               'fs-extra';
-import path from             'path';
-import through2 from         'through2';
-import PluginError from      'plugin-error';
+import chalk       from 'chalk';
+import fs          from 'fs-extra';
+import path        from 'path';
+import through2    from 'through2';
+import PluginError from 'plugin-error';
 import { execFileSync } from 'child_process';
 
 // Setup
