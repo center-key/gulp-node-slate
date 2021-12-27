@@ -19,7 +19,7 @@ const gulpNodeSlate = (options) => {
    const defaults = { source: 'source', build: 'build' };
    const settings = { ...defaults, ...options };
    if (options !== undefined && typeof options !== 'object')
-      throw new PluginError(pluginName, 'Options parameter must be an object');
+      throw new PluginError(pluginName, 'Options parameter must be an object.');
    console.log('Settings:', settings);
    const folder = {
       nodeSlate:        'node_modules/node-slate',

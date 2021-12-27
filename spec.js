@@ -3,11 +3,11 @@
 /////////////////////
 
 // Imports
-import assert from 'assert';
 import { assertDeepStrictEqual } from 'assert-deep-strict-equal';
-import fs from 'fs-extra';
+import assert         from 'assert';
+import fs             from 'fs-extra';
 import stringToStream from 'string-to-stream';
-import Vinyl from 'vinyl';
+import Vinyl          from 'vinyl';
 
 // Plugin
 import { gulpNodeSlate } from './gulp-node-slate.js';
@@ -23,7 +23,8 @@ describe('The gulp-node-slate plugin', () => {
 
    it('throws an error when given a bogus configuration', () => {
       const callPluginWithBogusConfig = () => gulpNodeSlate('bogus!');
-      assert.throws(callPluginWithBogusConfig, /Options parameter must be an object/);
+      const exception = { message: 'Options parameter must be an object.' };
+      assert.throws(callPluginWithBogusConfig, exception);
       });
 
    });
@@ -32,7 +33,7 @@ describe('The gulp-node-slate plugin', () => {
 describe('Running the gulp-node-slate plugin', () => {
    const options =   { source: 'api-docs/input', build: 'api-docs/output' };
    const oneMinute = 60 * 1000;
-   const clean = (done) => fs.remove('api-docs', done);
+   const clean =     (done) => fs.remove('api-docs', done);
    before(clean);
 
    it('passes through a file in the stream', (done) => {
@@ -55,7 +56,7 @@ describe('Running the gulp-node-slate plugin', () => {
       }).timeout(oneMinute);  //extra time in case node-slate needs to be downloaded
 
    it('creates the API documentation web page', () => {
-      const webPage = options.build + '/index.html';
+      const webPage =  options.build + '/index.html';
       const actual =   { page: webPage, exists: fs.existsSync(webPage) };
       const expected = { page: webPage, exists: true };
       assertDeepStrictEqual(actual, expected);
