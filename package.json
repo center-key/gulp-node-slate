@@ -1,7 +1,7 @@
 {
    "name": "gulp-node-slate",
    "description": "node-slate as a gulp task",
-   "version": "1.5.1",
+   "version": "1.6.0",
    "license": "MIT",
    "type": "module",
    "main": "gulp-node-slate.js",
@@ -38,7 +38,7 @@
       "chalk": "~5.0",
       "child_process": "~1.0",
       "fs-extra": "~10.0",
-      "node-slate": "~2.2",
+      "node-slate": "~2.3",
       "path": "~0.12",
       "plugin-error": "~1.0",
       "through2": "~4.0"
