@@ -27,7 +27,7 @@ const gulpNodeSlate = (options) => {
       nodeSlateSrc:     'node_modules/node-slate/source',
       nodeSlateBuild:   'node_modules/node-slate/build',
       source:           settings.source,
-      build:            settings.build
+      build:            settings.build,
       };
 
    const logExec = (cmd, folder) => {
@@ -59,9 +59,9 @@ const gulpNodeSlate = (options) => {
       fs.copySync(folder.nodeSlateSrcOrig, folder.nodeSlateSrc);
       fs.removeSync(folder.nodeSlateSrc + '/includes');
       fs.copySync(folder.source, folder.nodeSlateSrc);
-      fs.moveSync(folder.nodeSlateSrc + '/custom.scss', folder.nodeSlateSrc + '/stylesheets/_custom.scss');
-      fs.appendFileSync(folder.nodeSlateSrc + '/stylesheets/screen.css.scss', '\n@import "custom";');
-      fs.appendFileSync(folder.nodeSlateSrc + '/stylesheets/print.css.scss', '\n@import "custom";');
+      fs.moveSync(folder.nodeSlateSrc + '/custom.scss', folder.nodeSlateSrc + '/css/_custom.scss');
+      fs.appendFileSync(folder.nodeSlateSrc + '/css/screen.css.scss', '\n@import "custom";');
+      fs.appendFileSync(folder.nodeSlateSrc + '/css/print.css.scss', '\n@import "custom";');
       };
 
    const generateApiDocs = () => {
