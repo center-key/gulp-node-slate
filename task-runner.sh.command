@@ -85,7 +85,7 @@ openBrowser() {
    echo "To more quickly just run tests:"
    echo "   cd $projectHome"
    echo "   npm test"
-   echo "   open $webPage  #use Chrome or Firefox"  #macOS Safari encounters: SecurityError (DOM Exception 18)
+   echo "   open $webPage"
    echo
    sleep 2
    open $webPage

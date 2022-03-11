@@ -86,6 +86,9 @@ Example of passing in options:
 * `build` &ndash; Relative path to the Slate API documentation output folder (default: `'build'`).
 
 ## E) Notes
+1. You can also generate your Slate API documentation without Gulp by using
+*[node-slate](https://github.com/center-key/node-slate)* directly (the direct approach is
+recommended over using this Gulp plugin).
 1. If you want to contribute to the project, fork it and then run the `spec-runner.sh.command`
 script and examine the contents of the `api-docs` folder.  Pull requests are welcome.
 1. If you have a question, suggestion, or bug to report, open an
