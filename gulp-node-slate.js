@@ -6,8 +6,8 @@
 import chalk       from 'chalk';
 import fs          from 'fs-extra';
 import path        from 'path';
-import through2    from 'through2';
 import PluginError from 'plugin-error';
+import through2    from 'through2';
 import { execFileSync } from 'child_process';
 
 // Setup
@@ -25,7 +25,7 @@ const gulpNodeSlate = (options) => {
       nodeSlate:        'node_modules/node-slate',
       nodeSlateSrcOrig: 'node_modules/node-slate/source-original',
       nodeSlateSrc:     'node_modules/node-slate/source',
-      nodeSlateBuild:   'node_modules/node-slate/build',
+      nodeSlateBuild:   'node_modules/node-slate/build/3-rev',
       source:           settings.source,
       build:            settings.build,
       };
@@ -66,7 +66,7 @@ const gulpNodeSlate = (options) => {
 
    const generateApiDocs = () => {
       fs.removeSync(folder.nodeSlateBuild);
-      logExec('npm run build', folder.nodeSlate);
+      logExec('npm run build-quiet', folder.nodeSlate);
       fs.removeSync(folder.build);
       fs.copySync(folder.nodeSlateBuild, folder.build);
       };
@@ -82,7 +82,7 @@ const gulpNodeSlate = (options) => {
       generateApiDocs();
       done();
       console.log('Source input (markdown):', chalk.green(path.resolve(folder.source)));
-      console.log('Build output (HTML):    ', chalk.green(path.resolve(folder.build)));
+      console.log('Build output (HTML):    ', chalk.white(path.resolve(folder.build)));
       };
 
    return through2.obj(transform, completion);  //return stream
