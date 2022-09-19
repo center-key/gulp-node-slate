@@ -30,7 +30,7 @@
       "mocha": true
    },
    "scripts": {
-      "pretest": "jshint *.js",
+      "pretest": "jshint . --exclude-path .gitignore",
       "test": "mocha spec.js",
       "posttest": "w3c-html-validator"
    },
