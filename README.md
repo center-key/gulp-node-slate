@@ -40,11 +40,11 @@ open build/index.html
 Otherwise, follow the steps below.
 
 ## B) Instructions
-#### 1. Install into your project:
+### 1. Install into your project:
 ```shell
 $ npm install --save-dev gulp gulp-node-slate
 ```
-#### 2. Add a task to your **gulpfile.js**:
+### 2. Add a task to your **gulpfile.js**:
 ```javascript
 // Imports
 import gulp from 'gulp';
@@ -56,7 +56,7 @@ const generateApiDocs = () => gulp.src([]).pipe(slate());
 // Gulp
 gulp.task('slate', generateApiDocs);
 ```
-#### 3. Build and view the API documentation:
+### 3. Build and view the API documentation:
 ```shell
 $ gulp slate
 $ ls source
@@ -72,7 +72,7 @@ source/
    custom.scss
    index.yml
 ```
-#### 4. Get to work
+### 4. Get to work
 Customize the files in the `source` folder to create your API documentation
 and then rerun `gulp slate`.
 
@@ -85,7 +85,7 @@ Example of passing in options:
 * `source` &ndash; Relative path to the Slate API documentation input folder (default: `'source'`).
 * `build` &ndash; Relative path to the Slate API documentation output folder (default: `'build'`).
 
-## E) Notes
+## D) Notes
 1. You can also generate your Slate API documentation without Gulp by using
 *[node-slate](https://github.com/center-key/node-slate)* directly (the direct approach is
 recommended over using this Gulp plugin).
