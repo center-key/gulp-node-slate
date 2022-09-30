@@ -53,7 +53,7 @@ describe('Running the gulp-node-slate plugin', () => {
       pluginStream.on('data', handleFileFromStream);
       pluginStream.write(mockFile);
       pluginStream.end();
-      }).timeout(oneMinute);  //extra time in case node-slate needs to be downloaded
+      }).timeout(oneMinute).retries(1);  //extra time in case node-slate needs to be downloaded
 
    it('creates the API documentation web page', () => {
       const webPage =  options.build + '/index.html';
