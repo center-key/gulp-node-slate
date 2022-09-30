@@ -32,7 +32,7 @@ const gulpNodeSlate = (options) => {
 
    const logExec = (cmd, folder) => {
       const args = cmd.split(' ').splice(1, cmd.length - 1);
-      const options = { stdio: 'inherit' };
+      const options = { stdio: 'inherit', shell: process.platform === 'win32' };
       if (folder)
          options.cwd = folder;
       console.log(cmd + (folder ? ' ./' + folder : ''));

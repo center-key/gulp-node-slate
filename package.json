@@ -32,7 +32,7 @@
    "scripts": {
       "pretest": "jshint . --exclude-path .gitignore",
       "test": "mocha spec.js",
-      "posttest": "html-validator"
+      "posttest": "html-validator api-docs"
    },
    "dependencies": {
       "chalk": "~5.0",
