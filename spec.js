@@ -5,7 +5,7 @@
 // Imports
 import { assertDeepStrictEqual } from 'assert-deep-strict-equal';
 import assert         from 'assert';
-import fs             from 'fs-extra';
+import fs             from 'fs';
 import stringToStream from 'string-to-stream';
 import Vinyl          from 'vinyl';
 
@@ -33,7 +33,7 @@ describe('The gulp-node-slate plugin', () => {
 describe('Running the gulp-node-slate plugin', () => {
    const options =   { source: 'api-docs/input', build: 'api-docs/output' };
    const oneMinute = 60 * 1000;
-   const clean =     (done) => fs.remove('api-docs', done);
+   const clean =     () => fs.rmSync('api-docs', { recursive: true, force: true });
    before(clean);
 
    it('passes through a file in the stream', (done) => {

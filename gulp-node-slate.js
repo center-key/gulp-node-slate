@@ -3,12 +3,12 @@
 /////////////////////
 
 // Imports
+import { execFileSync } from 'child_process';
 import chalk       from 'chalk';
-import fs          from 'fs-extra';
+import fs          from 'fs';
 import path        from 'path';
 import PluginError from 'plugin-error';
 import through2    from 'through2';
-import { execFileSync } from 'child_process';
 
 // Setup
 const pluginName = 'gulp-node-slate';
@@ -43,32 +43,34 @@ const gulpNodeSlate = (options) => {
       console.log(fs.existsSync(folder.nodeSlate + '/node_modules') ? 'node-slate installed' : 'downloading...');
       logExec('npm install', folder.nodeSlate);
       if (!fs.existsSync(folder.nodeSlateSrcOrig))
-         fs.copySync(folder.nodeSlateSrc, folder.nodeSlateSrcOrig);
+         fs.cpSync(folder.nodeSlateSrc, folder.nodeSlateSrcOrig, { recursive: true });
       };
 
    const setupCustomFolder = () => {
-      fs.copySync(folder.nodeSlateSrcOrig + '/index.yml', folder.source + '/index.yml', { overwrite: false });
-      fs.copySync(folder.nodeSlateSrcOrig + '/images/logo.png', folder.source + '/images/logo.png', { overwrite: false });
+      fs.cpSync(folder.nodeSlateSrcOrig + '/index.yml', folder.source + '/index.yml', { overwrite: false });
+      fs.cpSync(folder.nodeSlateSrcOrig + '/images/logo.png', folder.source + '/images/logo.png', { overwrite: false });
       if (!fs.existsSync(folder.source + '/includes'))
-         fs.copySync(folder.nodeSlateSrcOrig + '/includes', folder.source + '/includes');
-      fs.ensureFileSync(folder.source + '/custom.scss');
+         fs.cpSync(folder.nodeSlateSrcOrig + '/includes', folder.source + '/includes', { recursive: true });
+      if (!fs.existsSync(folder.source + '/custom.scss'))
+         fs.writeFileSync(folder.source + '/custom.scss', '// Custom Styles\n');
       };
 
    const rebuildNodeSlateSourceFolder = () => {
-      fs.removeSync(folder.nodeSlateSrc);
-      fs.copySync(folder.nodeSlateSrcOrig, folder.nodeSlateSrc);
-      fs.removeSync(folder.nodeSlateSrc + '/includes');
-      fs.copySync(folder.source, folder.nodeSlateSrc);
-      fs.moveSync(folder.nodeSlateSrc + '/custom.scss', folder.nodeSlateSrc + '/css/_custom.scss');
+      fs.rmSync(folder.nodeSlateSrc, { recursive: true, force: true });
+      fs.cpSync(folder.nodeSlateSrcOrig, folder.nodeSlateSrc, { recursive: true });
+      fs.rmSync(folder.nodeSlateSrc + '/includes', { recursive: true, force: true });
+      fs.cpSync(folder.source, folder.nodeSlateSrc, { recursive: true });
+      fs.mkdirSync(folder.nodeSlateSrc + '/css', { recursive: true });
+      fs.renameSync(folder.nodeSlateSrc + '/custom.scss', folder.nodeSlateSrc + '/css/_custom.scss');
       fs.appendFileSync(folder.nodeSlateSrc + '/css/screen.css.scss', '\n@import "custom";');
       fs.appendFileSync(folder.nodeSlateSrc + '/css/print.css.scss', '\n@import "custom";');
       };
 
    const generateApiDocs = () => {
-      fs.removeSync(folder.nodeSlateBuild);
+      fs.rmSync(folder.nodeSlateBuild, { recursive: true, force: true });
       logExec('npm run build-quiet', folder.nodeSlate);
-      fs.removeSync(folder.build);
-      fs.copySync(folder.nodeSlateBuild, folder.build);
+      fs.rmSync(folder.build, { recursive: true, force: true });
+      fs.cpSync(folder.nodeSlateBuild, folder.build, { recursive: true });
       };
 
    const transform = (file, encoding, done) => {

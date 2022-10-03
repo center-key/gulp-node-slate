@@ -37,8 +37,7 @@
    "dependencies": {
       "chalk": "~5.0",
       "child_process": "~1.0",
-      "fs-extra": "~10.1",
-      "node-slate": "~3.0",
+      "node-slate": "~3.1",
       "path": "~0.12",
       "plugin-error": "~2.0",
       "through2": "~4.0"
