@@ -1,7 +1,7 @@
 {
    "name": "gulp-node-slate",
    "description": "node-slate as a gulp task",
-   "version": "2.0.1",
+   "version": "2.0.2",
    "license": "MIT",
    "type": "module",
    "main": "gulp-node-slate.js",
@@ -35,7 +35,7 @@
       "posttest": "html-validator api-docs"
    },
    "dependencies": {
-      "chalk": "~5.1",
+      "chalk": "~5.2",
       "child_process": "~1.0",
       "node-slate": "~3.1",
       "path": "~0.12",
@@ -46,8 +46,8 @@
       "assert-deep-strict-equal": "~1.0",
       "gulp": "~4.0",
       "jshint": "~2.13",
-      "mocha": "~10.1",
+      "mocha": "~10.2",
       "string-to-stream": "~3.0",
-      "w3c-html-validator": "~1.2"
+      "w3c-html-validator": "~1.3"
    }
 }
