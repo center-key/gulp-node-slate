@@ -9,7 +9,6 @@
 
 [![License:MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/center-key/gulp-node-slate/blob/main/LICENSE.txt)
 [![npm](https://img.shields.io/npm/v/gulp-node-slate.svg)](https://www.npmjs.com/package/gulp-node-slate)
-[![Vulnerabilities](https://snyk.io/test/github/center-key/gulp-node-slate/badge.svg)](https://snyk.io/test/github/center-key/gulp-node-slate)
 [![Build](https://github.com/center-key/gulp-node-slate/workflows/build/badge.svg)](https://github.com/center-key/gulp-node-slate/actions/workflows/run-spec-on-push.yaml)
 
 ## A) Lightning Quick Demo

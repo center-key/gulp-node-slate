@@ -35,7 +35,7 @@
       "posttest": "html-validator api-docs"
    },
    "dependencies": {
-      "chalk": "~5.2",
+      "chalk": "~5.3",
       "child_process": "~1.0",
       "node-slate": "~3.1",
       "path": "~0.12",
@@ -43,11 +43,11 @@
       "through2": "~4.0"
    },
    "devDependencies": {
-      "assert-deep-strict-equal": "~1.0",
+      "assert-deep-strict-equal": "~1.1",
       "gulp": "~4.0",
       "jshint": "~2.13",
       "mocha": "~10.2",
       "string-to-stream": "~3.0",
-      "w3c-html-validator": "~1.3"
+      "w3c-html-validator": "~1.4"
    }
 }
