@@ -1,4 +1,4 @@
-| :no_entry_sign: &nbsp; Gulp is no longer maintained.<br>The same functionality of this gulp plugin is available as a regular CLI build task without gulp.<br>See: [node-slate](https://github.com/center-key/node-slate) |
+| :no_entry_sign:&nbsp; Gulp is no longer maintained.<br>The same functionality of this gulp plugin is available as a regular CLI build task without gulp.<br>See: [node-slate](https://github.com/center-key/node-slate) |
 | :- |
 
 <p align=center>
